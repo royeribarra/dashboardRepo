@@ -1,0 +1,4 @@
+.ant-table-container{
+    width: calc( 100vw - 338px );
+    overflow-x: scroll;
+}

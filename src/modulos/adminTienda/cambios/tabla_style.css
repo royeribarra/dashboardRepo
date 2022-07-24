@@ -1,0 +1,27 @@
+.ant-table-container{
+    width: calc( 100vw - 257px );
+    overflow-x: scroll;
+}
+
+@media (max-width: 768px) {
+    .ant-table-container{
+        width: calc( 100vw - 31px );
+        overflow-x: scroll;
+    }
+}
+
+.table-gestiones .ant-spin-nested-loading .ant-spin-container .ant-table .ant-table-container{
+    width: calc( 100vw - 300px );
+    overflow-x: scroll;
+}
+
+@media (max-width: 768px) {
+    .table-gestiones .ant-spin-nested-loading .ant-spin-container .ant-table .ant-table-container{
+        width: calc( 100vw - 70px );
+        overflow-x: scroll;
+    }
+}
+
+.filtro-gestiones{
+    margin-bottom: 15px;
+}
