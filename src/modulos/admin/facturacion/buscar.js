@@ -48,7 +48,6 @@ const Buscar = ({form, titulo, handleParentSearch, getFeesTienda}) => {
   }
 
   const onFinish = (values) =>{
-    console.log(values)
   }
 
   const pasarDatosSearch = () => {

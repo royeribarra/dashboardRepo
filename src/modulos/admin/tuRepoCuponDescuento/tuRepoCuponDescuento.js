@@ -101,7 +101,6 @@ const TuRepoCuponDescuento = ({ updateMigas }) => {
       ...values,
       page: paginationTab? paginationTab.current : 1
     }
-    console.log(searchObj)
 
     productoService.getAll(searchObj).then(({ data }) => {
       setPagination({

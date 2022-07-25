@@ -92,7 +92,6 @@ const CambiosEstandar = () => {
 
   const getConfiguracion = (tienda_id) => {
     configuracionService.getByTienda(tienda_id).then(({data}) => {
-      console.log(data)
       setConfiguracion(data);
     });
   }

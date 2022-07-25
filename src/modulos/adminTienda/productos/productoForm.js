@@ -38,10 +38,8 @@ const ProductoForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =
   const [archivos, setArchivos] = useState([]);
 
   const getProductoInfo = (id) => {
-    console.log(id);
     productoService.get(id).then(
       ({ data }) => {
-        console.log(data)
         data = { ...data, id };
         form.setFieldsValue(data);
         setActImage(data.dimensiones);
@@ -90,7 +88,6 @@ const ProductoForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =
     const file = event.target.files[0];
     let img = new Image();
     img.src = URL.createObjectURL(file);
-    console.log(file)
     img.onload = () => {
       setImage(file);
       setActImage(URL.createObjectURL(file));
@@ -100,7 +97,6 @@ const ProductoForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =
   const { url, path } = useRouteMatch();
 
   const normFile = (e) => {
-    console.log('Upload event:', e);
     setArchivos(e.fileList);
     if (Array.isArray(e)) {
       return e;
@@ -110,7 +106,6 @@ const ProductoForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =
   };
 
   useEffect(() => {
-    console.log(params.productoId)
     updateMigas(url) 
     
     if (!profiles.length) {

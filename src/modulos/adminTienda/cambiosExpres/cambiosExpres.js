@@ -214,14 +214,12 @@ const CambiosExpres = ({ updateMigas }) => {
       render: (tracker_cambio_deluxe) => {
         const updateTracker = () => {
           cambioService.updateStateFromStore(tracker_cambio_deluxe.gestion_id, tracker_cambio_deluxe).then((response) => {
-            console.log(response);
             fetchAll();
           });
         }
 
         const denegarDevolucion = (values) => {
           cambioService.denied(tracker_cambio_deluxe.gestion_id, values).then((response) => {
-            console.log(response);
             fetchAll();
           });
         }
@@ -471,14 +469,12 @@ const CambiosExpres = ({ updateMigas }) => {
       render: (id) => {
         const Aceptar = () => {
           cambioService.aceptarCambioErrorTienda(id).then((data) => {
-            console.log(data);
             fetchAll();
             fetchAllByError();
           })
         }
         const Denegar = () => {
           cambioService.denegarCambioErrorTienda(id).then((data) => {
-            console.log(data)
             fetchAll();
             fetchAllByError();
           })
@@ -537,7 +533,6 @@ const CambiosExpres = ({ updateMigas }) => {
     }
 
     cambioService.getAllErrors().then(({ data }) => {
-      console.log(data)
       setPaginationError({
         ...paginationTab,
         current: data.current,

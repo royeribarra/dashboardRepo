@@ -19,15 +19,11 @@ const MotivoComponente = ({data, actualizarPagoLogistico, actualizarMotivo}) => 
   const [pago, setPago] =useState(data.pago_logistico);
   const [motivoInterno, setMotivoInterno] = useState();
   const onChange = (e) => {
-    console.log(e);
-    console.log(`checked = ${e.target.checked}`);
     setPago(e.target.value)
     actualizarPagoLogistico(data.id, e.target.value, e.target.checked)
   }
 
   const onChangeSwitch = (checked) => {
-    console.log(`switch to ${checked}`);
-    console.log(checked);
     actualizarMotivo(data.id, checked)
   }
 
@@ -60,19 +56,14 @@ const MotivoComponente = ({data, actualizarPagoLogistico, actualizarMotivo}) => 
 }
 
 const MotivosComponente = ({data, actualizarPagoLogistico, actualizarMotivo}) => {
-  console.log(data)
   const [pago, setPago] =useState(data.pago_logistico);
   const [motivoInterno, setMotivoInterno] = useState();
   const onChange = (e) => {
-    console.log(e);
-    console.log(`checked = ${e.target.checked}`);
     setPago(e.target.value)
     actualizarPagoLogistico(data.id, e.target.value, e.target.checked)
   }
 
   const onChangeSwitch = (checked) => {
-    console.log(`switch to ${checked}`);
-    console.log(checked);
     actualizarMotivo(data.id, checked)
   }
 
@@ -105,19 +96,14 @@ const MotivosComponente = ({data, actualizarPagoLogistico, actualizarMotivo}) =>
 }
 
 const MotivosComponenteTable = ({data, actualizarPagoLogistico, actualizarMotivo}) => {
-  console.log(data)
   const [pago, setPago] =useState(data.pago_logistico);
   const [motivoInterno, setMotivoInterno] = useState();
   const onChange = (e) => {
-    console.log(e);
-    console.log(`checked = ${e.target.checked}`);
     setPago(e.target.value)
     actualizarPagoLogistico(data.id, e.target.value, e.target.checked)
   }
 
   const onChangeSwitch = (checked) => {
-    console.log(`switch to ${checked}`);
-    console.log(checked);
     actualizarMotivo(data.id, checked)
   }
 

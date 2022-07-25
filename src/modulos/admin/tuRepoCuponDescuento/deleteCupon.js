@@ -3,7 +3,6 @@ import { Modal, Button } from "antd";
 import { ProductoService } from "../../../servicios/productoService";
 
 function DeleteCupon({status, handleClose, handleRefreshTable, activeRow}) {
-    console.log(activeRow)
     const productoService = new ProductoService("products");
     const closeModal = () => {
         handleClose(false);
@@ -11,7 +10,6 @@ function DeleteCupon({status, handleClose, handleRefreshTable, activeRow}) {
 
     const handleSubmit = () => {
         productoService.deleteProduct(activeRow, activeRow.id).then((response) => {
-            console.log(response)
             closeModal();
             handleRefreshTable();
         })

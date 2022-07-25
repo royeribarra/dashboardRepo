@@ -8,7 +8,7 @@ import { UserService } from "../../../servicios/userService";
 import { TiendaService } from "../../../servicios/tiendaService";
 import { getProfiles, getSedes } from "../../../redux/actions/userActions";
 import { updateMigas } from "../../../redux/actions/routeActions";
-import { Card, CardBlock, CardBody, CardHeader } from "reactstrap";
+import { Card, CardBody } from "reactstrap";
 import Page from 'components/Page';
 
 // InputNumber
@@ -24,29 +24,18 @@ const validateMessages = {
   },
 };
 
-const prefixSelector = (
-  <Form.Item name="prefix" noStyle>
-    <Select defaultValue={1} style={{ width: 70 }}>
-      <Option value={1} selected>
-        +51
-      </Option>
-      {/* <Option value="87">+87</Option> */}
-    </Select>
-  </Form.Item>
-);
-
 const UsuarioForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) => {
   const [tiendas, setTiendas] = useState();
   const [form] = Form.useForm();
   const userService = new UserService("users");
   const tiendaService = new TiendaService("stores");
-  const { id } = useParams();
+  const { usuarioId } = useParams();
   const history = useHistory();
 
   const getUserInfo = () => {
-    userService.get(id).then(
+    userService.get(usuarioId).then(
       ({ data }) => {
-        data = { ...data, id };
+        data = { ...data, usuarioId };
         form.setFieldsValue(data);
       },
       (err) => {
@@ -65,7 +54,7 @@ const UsuarioForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =>
   }
 
   const onFinish = (values) => {
-    userService.store(values, id).then(
+    userService.store(values, usuarioId).then(
       ({data}) => {
         toastr.success(data.message)
         goToList();
@@ -86,7 +75,7 @@ const UsuarioForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =>
       getSedes();
     }
 
-    if (id) {
+    if (usuarioId) {
       getUserInfo();
     }
     getTiendas();
@@ -186,7 +175,6 @@ const UsuarioForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =>
                     ]}
                   >
                     <Input
-                      addonBefore={prefixSelector}
                       style={{ width: "100%" }}
                     />
                   </Form.Item>
@@ -240,11 +228,11 @@ const UsuarioForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =>
               </div>
               <div className="col-md-6">
                 <Form.Item
-                  label={id ? "Nueva Contraseña" : "Contraseña"}
+                  label={usuarioId ? "Nueva Contraseña" : "Contraseña"}
                   name={"password"}
                   rules={[
                     {
-                      required: id ? false : true,
+                      required: usuarioId ? false : true,
                       message: "Por favor ingrese su contraseña",
                     },
                   ]}

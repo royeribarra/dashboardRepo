@@ -20,7 +20,6 @@ function Estadisticas() {
     })
     setFechas(newVal);
     service.getFechas(newVal).then(({data}) => {
-      console.log(data);
     })
   }
 

@@ -27,21 +27,18 @@ const Perfil = ({ updateMigas }) => {
   const [loading] = useState(false);
 
   const onFinish = (values) => {
-    console.log(values)
     if(id){
         service.update(id, values).then(({data}) => {
         toastr.success(data.message)
       });
     }else{
         service.store(values).then((response) => {
-        console.log(response);
       });
     }
   }
 
   const getPerfilInfo = () => {
     service.get().then(({ data }) => {
-      console.log(data)
       form.setFieldsValue(data);
       if(data){
         setId(data.id);

@@ -293,7 +293,6 @@ const Facturacion = ({ updateMigas }) => {
     }
 
     facturacionService.getAll(searchObj).then(({ data }) => {
-      console.log(data)
       setPagination({
         ...paginationTab,
         current: data.current,
@@ -304,18 +303,15 @@ const Facturacion = ({ updateMigas }) => {
   };
 
   const onChangeTipoReporte = (value) => {
-    console.log(value)
   }
 
   const getFeesTienda = (fechainicial, fechafinal, tienda_id) => {
     facturacionService.getFees(fechainicial, fechafinal, tienda_id).then(({data}) => {
-      console.log(data);
       setFeesTienda(data);
     });
   }
 
   const onFinish = (values) =>{
-    console.log(values)
   }
 
   return (

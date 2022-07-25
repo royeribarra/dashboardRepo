@@ -9,7 +9,6 @@ export function loginTienda(values) {
 
         logService.oauthTienda(values)
             .then(({data}) => {
-                console.log(data)
                 if(data.status === false){
                     toastr.error(data.message)
                     window.location.reload(false);

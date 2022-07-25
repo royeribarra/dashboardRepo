@@ -558,7 +558,6 @@ const Cambios = ({ updateMigas }) => {
     }
 
     tiendaCambioService.getAllErrors(searchObj).then(({ data }) => {
-      console.log(data)
       setPaginationError({
         ...paginationTab,
         current: data.current,

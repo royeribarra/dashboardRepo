@@ -13,7 +13,7 @@ const MainRoutes = () => {
     return `/${process.env.PUBLIC_URL.split('/').pop()}`;
   };
   return (
-    <BrowserRouter basename={getBasename()}>
+    <BrowserRouter>
       <GAListener>
         <Switch>
           <Route path="/admin" component={(props) => {

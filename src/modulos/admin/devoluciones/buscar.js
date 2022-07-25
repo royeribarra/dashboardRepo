@@ -17,7 +17,6 @@ const Buscar = ({form, handleParentSearch}) =>
     const storeService = new TiendaService('stores');
     storeService.getAllSimple()
       .then(({ data }) => {
-        console.log(data)
         setStores(data);
       })
   }

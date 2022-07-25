@@ -17,7 +17,6 @@ export class ProductoService extends MainService {
     return axios.post(`${this.url}/${id}`, data, this.options);
   }
   deleteProduct(data, id) {
-    console.log(this.options)
     return axios.post(`${this.url}/delete/${id}`, data, this.options);
   }
 

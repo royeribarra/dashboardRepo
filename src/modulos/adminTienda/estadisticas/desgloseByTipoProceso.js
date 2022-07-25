@@ -5,7 +5,6 @@ import { EstadisticaService } from "../../../servicios/tienda/estadisticaService
 import { getColor } from 'utils/colors';
 
 function DesgloseByTipoProceso({fechas}) {
-  console.log(fechas)
   const service = new EstadisticaService("estadistica/desglose-tipo-proceso");
   const [data, setData] = useState({
     devolucion: 0, estandar: 0, express: 0, servicioTecnico: 0

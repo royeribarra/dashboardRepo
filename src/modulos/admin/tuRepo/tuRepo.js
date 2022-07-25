@@ -84,7 +84,6 @@ const TuRepo = ({ updateMigas }) => {
       dataIndex: "opciones",
       render: (opciones, row) => 
       {
-        console.log(row)
         const content = opciones.map((opcion, index) => 
           <p key={index}>{(index + 1) + '. '} {opcion.opcion_id === 6 ? (opcion.opcion.nombre + '-' + row.nueva_talla) : opcion.opcion.nombre}</p>
         );

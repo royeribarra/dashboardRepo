@@ -92,7 +92,6 @@ const TiendaForm = ({ updateMigas }) => {
   const getTiendaInfo = () => {
     tiendaService.get(id).then(
       ({ data }) => {
-        console.log(data)
         setInfo(data);
         data = { ...data, id };
         form.setFieldsValue(data);
@@ -175,7 +174,6 @@ const TiendaForm = ({ updateMigas }) => {
   useEffect(() => {
     updateMigas(url) 
     if (id) {
-      console.log(id)
     }
   }, [] );
 

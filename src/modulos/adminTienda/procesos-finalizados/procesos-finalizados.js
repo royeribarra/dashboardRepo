@@ -181,7 +181,6 @@ const ProcesosFinalizados = ({ updateMigas }) => {
       ...values,
       page: paginationTab? paginationTab.current : 1
     }
-    console.log(values)
     service.getAll(searchObj).then(({ data }) => {
       setPagination({
         ...paginationTab,
