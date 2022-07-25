@@ -348,7 +348,7 @@ const CambiosExpres = ({ updateMigas }) => {
             pagination={pagination}
             loading={loading}
             onChange={fetchAll}
-            scroll={{ x: 2200}}
+            scroll={{ x: 2600}}
           />
         </CardBody>
       </Card>

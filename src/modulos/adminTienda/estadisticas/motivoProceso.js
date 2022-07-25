@@ -1,30 +1,46 @@
 import React, { useEffect, useState } from "react";
 
-import { Card } from 'antd';
-
-import C3Chart from "react-c3js";
+import { Card, CardHeader, CardBody } from 'reactstrap';
+import { Pie } from 'react-chartjs-2';
 import { EstadisticaService } from "../../../servicios/tienda/estadisticaService";
+import { getColor } from 'utils/colors';
 
 function MotivoProceso({fechas}) {
   const motivoService = new EstadisticaService("estadistica/motivo-procesos");
-  const [motivos, setMotivos] = useState();
-  const [motivo1, setMotivo1] = useState(0);
-  const [motivo2, setMotivo2] = useState(0);
-  const [motivo3, setMotivo3] = useState(0);
-  const [motivo4, setMotivo4] = useState(0);
-  const [motivo5, setMotivo5] = useState(0);
+  const [data, setData] = useState({
+    motivo1: 0, motivo2: 0, motivo3: 0, motivo4: 0, motivo5: 0
+  });
 
   const getMotivos = () => {
     motivoService.getMotivoProceso(fechas).then(({data})=>{
-      
-      setMotivos(data);
-      setMotivo1(data.motivo1);
-      setMotivo2(data.motivo2);
-      setMotivo3(data.motivo3);
-      setMotivo4(data.motivo4);
-      setMotivo5(data.motivo5);
+      setData(data);
     })
   }
+
+  const genPieData = () => {
+    return {
+      datasets: [
+        {
+          data: [data.motivo1, data.motivo2, data.motivo3, data.motivo4, data.motivo5],
+          backgroundColor: [
+            getColor('primary'),
+            getColor('secondary'),
+            getColor('success'),
+            getColor('info'),
+            getColor('danger')
+          ],
+          label: 'Dataset 1',
+        },
+      ],
+      labels: [
+        'No me quedó bien', 
+        'No era lo que esperaba', 
+        'Pedí otro producto por error', 
+        'Me entregaron otro producto',
+        'Producto dañado'
+      ],
+    };
+  };
 
   useEffect(() => {
     getMotivos();
@@ -32,11 +48,11 @@ function MotivoProceso({fechas}) {
 
   return (
     <Card>
-      <Card.Header style={{ borderRadius: "46px 46px 0px 0px" }}>
-        <Card.Title>Motivo de procesos</Card.Title>
-      </Card.Header>
-      <Card.Body className="color-repo">
-        {
+      <CardHeader>
+        Motivo de procesos
+      </CardHeader>
+      <CardBody className="color-repo">
+        {/* {
           motivos && 
           <C3Chart
             style={{ height: "24rem" }}
@@ -73,8 +89,9 @@ function MotivoProceso({fechas}) {
               top: 0,
             }}
           />
-        }
-      </Card.Body>
+        } */}
+        <Pie data={genPieData()} />
+      </CardBody>
     </Card>
   );
 }

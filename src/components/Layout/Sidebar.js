@@ -52,10 +52,10 @@ const navComponents = [
     exact: false,
     Icon: MdGroupWork,
   },
-  { to: '/cambios-expres', name: 'Cambios Expres', exact: false, Icon: MdChromeReaderMode },
+  { to: '/cambios-expres', name: 'Cambios Express', exact: false, Icon: MdChromeReaderMode },
   { to: '/tu-repo', name: 'Tu Repo', exact: false, Icon: MdViewList },
   {
-    to: '/tu-repo/cupones',
+    to: '/cupones',
     name: 'Cupones',
     exact: false,
     Icon: MdArrowDropDownCircle,

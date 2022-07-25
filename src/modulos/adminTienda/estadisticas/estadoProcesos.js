@@ -1,25 +1,41 @@
 import React, { useEffect, useState } from "react";
-import { Card } from 'antd';
-
-import C3Chart from "react-c3js";
+import { Card, CardHeader, CardBody } from 'reactstrap';
 import { EstadisticaService } from "../../../servicios/tienda/estadisticaService";
+import { getColor } from 'utils/colors';
+import { Pie} from 'react-chartjs-2';
 
 function EstadoProcesos({fechas}) {
   const estadoService = new EstadisticaService("estadistica/estado-procesos");
-  const [procesos, setProcesos] = useState();
-  const [proceso, setProceso] = useState(0);
-  const [aceptado, setAceptado] = useState(0);
-  const [rechazado, setRechazado] = useState(0);
+  const [data, setData] = useState({
+    aceptado: 0, proceso: 0, rechazado: 0
+  });
 
   const getEstados = () => {
     estadoService.getEstadoProcesos(fechas).then(({data})=>{
-      console.log(data);
-      setProcesos(data);
-      setProceso(data.proceso);
-      setAceptado(data.aceptado);
-      setRechazado(data.rechazado);
+      setData(data);
     })
   }
+
+  const genPieData = () => {
+    return {
+      datasets: [
+        {
+          data: [data.proceso, data.aceptado, data.rechazado],
+          backgroundColor: [
+            getColor('primary'),
+            getColor('secondary'),
+            getColor('success')
+          ],
+          label: 'Dataset 1',
+        },
+      ],
+      labels: [
+        'En proceso', 
+        'Aceptado', 
+        'Rechazado'
+      ],
+    };
+  };
 
   useEffect(() => {
     getEstados();
@@ -27,11 +43,11 @@ function EstadoProcesos({fechas}) {
 
   return (
     <Card>
-      <Card.Header style={{ borderRadius: "46px 46px 0px 0px" }}>
-        <Card.Title>Estado de procesos</Card.Title>
-      </Card.Header>
-      <Card.Body className="color-repo">
-        {
+      <CardHeader>
+        Estado de procesos
+      </CardHeader>
+      <CardBody>
+        {/* {
           procesos && 
             <C3Chart
               style={{ height: "24rem" }}
@@ -61,8 +77,9 @@ function EstadoProcesos({fechas}) {
                 top: 0,
               }}
             />
-        }
-      </Card.Body>
+        } */}
+        <Pie data={genPieData()} />
+      </CardBody>
     </Card>
   );
 }

@@ -1,4 +1,4 @@
-.ant-table-container{
+/* .ant-table-container{
     width: calc( 100vw - 257px );
     overflow-x: scroll;
 }
@@ -8,7 +8,7 @@
         width: calc( 100vw - 31px );
         overflow-x: scroll;
     }
-}
+} */
 
 .card-imagen-producto-devolucion{
     width: 200px !important;

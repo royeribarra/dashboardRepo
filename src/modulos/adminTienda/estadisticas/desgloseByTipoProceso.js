@@ -1,39 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { Card } from 'antd';
-
-import C3Chart from "react-c3js";
+import { Card, CardHeader, CardBody } from 'reactstrap';
+import { Pie } from 'react-chartjs-2';
 import { EstadisticaService } from "../../../servicios/tienda/estadisticaService";
+import { getColor } from 'utils/colors';
 
 function DesgloseByTipoProceso({fechas}) {
   console.log(fechas)
   const service = new EstadisticaService("estadistica/desglose-tipo-proceso");
-  const [data, setData] = useState();
-  const [estandar, setEstandar] = useState(0);
-  const [express, setExpress] = useState(0);
-  const [devolucion, setDevolucion] = useState(0);
-  const [servicioTecnico, setServicioTecnico] = useState(0);
+  const [data, setData] = useState({
+    devolucion: 0, estandar: 0, express: 0, servicioTecnico: 0
+  });
 
   const getData = () => {
     service.getDesgloseByTipoProceso(fechas).then(({data})=>{
       setData(data);
-      setEstandar(data.estandar);
-      setExpress(data.express);
-      setDevolucion(data.devolucion);
-      setServicioTecnico(data.servicioTecnico);
     })
   }
 
   useEffect(() => {
     getData();
   }, [fechas]);
-  
+
+  const genPieData = () => {
+    return {
+      datasets: [
+        {
+          data: [data.devolucion, data.estandar, data.express, data.servicioTecnico],
+          backgroundColor: [
+            getColor('primary'),
+            getColor('secondary'),
+            getColor('success'),
+            getColor('info')  
+          ],
+          label: 'Dataset 1',
+        },
+      ],
+      labels: ['Devoluciones', 'Cambios Estándar', 'Cambios Express', 'Servicio Técnico'],
+    };
+  };
+
   return (
     <Card>
-      <Card.Header style={{ borderRadius: "46px 46px 0px 0px" }}>
-        <Card.Title>Desglose por tipo de proceso</Card.Title>
-      </Card.Header>
-      <Card.Body className="color-repo">
-        {
+      <CardHeader>
+        Desglose por tipo de proceso
+      </CardHeader>
+      <CardBody>
+        {/* {
           data && 
           <C3Chart
             style={{ height: "24rem" }}
@@ -70,9 +82,9 @@ function DesgloseByTipoProceso({fechas}) {
               top: 0,
             }}
           />
-        }
-        
-      </Card.Body>
+        } */}
+        <Pie data={genPieData()} />
+      </CardBody>
     </Card>
   );
 }

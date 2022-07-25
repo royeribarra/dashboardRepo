@@ -49,7 +49,7 @@ const navComponents = [
   { to: '/cambios-estandar', name: 'Cambios Estandar', exact: false, Icon: MdRadioButtonChecked },
   {
     to: '/cambios-expres',
-    name: 'Cambios Expres',
+    name: 'Cambios Express',
     exact: false,
     Icon: MdGroupWork,
   },

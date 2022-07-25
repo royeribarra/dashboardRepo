@@ -125,7 +125,7 @@ const CuponForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) => {
             <Button type="primary" htmlType="submit" style={{ margin: "10px" }}>
               Guardar
             </Button>
-            <NavLink to="/tu-repo/cupones">
+            <NavLink to="/admin/cupones">
               <Button type="danger" style={{ margin: "10px" }}>Cancelar</Button>
             </NavLink>
           </Form.Item>

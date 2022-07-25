@@ -214,8 +214,7 @@ const ProcesosFinalizados = ({ updateMigas }) => {
             pagination={pagination}
             loading={loading}
             onChange={fetchAll}
-            scroll={{x: '100vw'}}
-            className="table-gestiones"
+            scroll={{ x: 2200 }}
           />
         </CardBody>
       </Card>

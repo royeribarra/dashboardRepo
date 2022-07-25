@@ -166,7 +166,7 @@ const UsuarioForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =>
                     ]}
                   >
                     <Select className="select-padre" placeholder="Seleccione una tienda">
-                      <Option value="repo" key="repo"> Repo</Option>
+                      <Option value={0} key="repo">Ninguna</Option>
                       { tiendas && tiendas.map( tienda => (
                           <Option value={tienda.id} key={tienda.id}> {tienda.business_name}</Option>
                         ))
@@ -258,11 +258,11 @@ const UsuarioForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =>
               </div>
             </div>
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" style={{ margin: "10px" }}>
                 Guardar
               </Button>
               <NavLink to="/admin/usuarios">
-                <Button type="danger">Cancelar</Button>
+                <Button type="danger" style={{ margin: "10px" }}>Cancelar</Button>
               </NavLink>
             </Form.Item>
           </Form>

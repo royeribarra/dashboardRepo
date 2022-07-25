@@ -154,7 +154,7 @@ const Usuarios = ({ updateMigas }) => {
           <div>
             <NavLink
               exact={false}
-              to={`${path}/crear`}
+              to={`usuario/crear`}
             >
               <Button style={{ marginBottom: "15px" }}>Crear Usuario</Button>
             </NavLink>
