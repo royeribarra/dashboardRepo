@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { Table, Form } from "antd";
 import { DistritoService } from "../../../servicios/distritoService";
 import { updateMigas } from "../../../redux/actions/routeActions";
-import Buscar from "./buscar";
 import Page from '../../../components/Page';
 
 import {

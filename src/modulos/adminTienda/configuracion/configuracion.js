@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouteMatch, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { Form, Input, Switch, Checkbox, Row, Col, Button } from "antd";
@@ -6,7 +6,6 @@ import { ConfiguracionService } from "../../../servicios/tienda/configuracionSer
 import { updateMigas } from "../../../redux/actions/routeActions";
 import { toastr } from "react-redux-toastr";
 import Page from '../../../components/Page';
-//import columnas from "./columnas";
 
 import {
   Card,

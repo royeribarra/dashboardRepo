@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { NavLink, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
-import { Table, Form, Upload, Space, Button, Image, InputNumber, Input } from "antd";
+import { Table, Form, Upload, Button, Image } from "antd";
 import { ProductoService } from "../../../servicios/productoService";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import DeleteProducto from "./deleteProducto";
@@ -13,44 +13,8 @@ import {
   Card,
   CardBody,
   CardHeader,
-  Badge,
   Button as ButtonReact
 } from 'reactstrap';
-import "./style.css";
-const EditableCell = ({
-  editing,
-  dataIndex,
-  title,
-  inputType,
-  record,
-  index,
-  children,
-  ...restProps
-}) => {
-  const inputNode = inputType === 'number' ? <InputNumber /> : <Input />;
-  return (
-    <td {...restProps}>
-      {editing ? (
-        <Form.Item
-          name={dataIndex}
-          style={{
-            margin: 0,
-          }}
-          rules={[
-            {
-              required: true,
-              message: `Please Input ${title}!`,
-            },
-          ]}
-        >
-          {inputNode}
-        </Form.Item>
-      ) : (
-        children
-      )}
-    </td>
-  );
-};
 
 const Productos = ({ updateMigas }) => {
   const productoService = new ProductoService("products");
@@ -143,7 +107,6 @@ const Productos = ({ updateMigas }) => {
           });
         }
         return (
-          
           <div className="container-fluid" style={{ textAlign: "center"}}>
             <div>
               <Button type="primary" onClick={agregarInventario} size="small" shape="circle">+</Button>
@@ -297,11 +260,6 @@ const Productos = ({ updateMigas }) => {
               pagination={pagination}
               loading={loading}
               onChange={fetchAll}
-              components={{
-                body: {
-                  cell: EditableCell,
-                },
-              }}
               bordered
               scroll={1700}
             />

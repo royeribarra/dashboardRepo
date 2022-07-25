@@ -4,7 +4,7 @@ import { Form, Input, Select } from "antd";
 import { useEffect } from "react";
 import { useState } from "react";
 import { TiendaService } from "../../../servicios/tiendaService";
-import { Button, Card, CardBlock, CardBody, CardHeader } from "reactstrap";
+import { Button, Card, CardBody, CardHeader } from "reactstrap";
 
 const { Option } = Select;
 

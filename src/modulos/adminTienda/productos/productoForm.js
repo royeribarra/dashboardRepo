@@ -11,8 +11,6 @@ import Page from '../../../components/Page';
 import {
   Card,
   CardBody,
-  CardHeader,
-  Badge,
   Button as ButtonReact
 } from 'reactstrap';
 

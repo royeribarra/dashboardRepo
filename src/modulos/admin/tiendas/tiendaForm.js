@@ -8,7 +8,7 @@ import { getProfiles, getSedes } from "../../../redux/actions/userActions";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import ImageUploading from "react-images-uploading";
 import ReactBnbGallery from "react-bnb-gallery";
-import { Card, CardBlock, CardBody, CardHeader, Button as ButtonStrap } from "reactstrap";
+import { Card, CardBody, CardHeader, Button as ButtonStrap } from "reactstrap";
 import Page from 'components/Page';
 
 // InputNumber

@@ -1,13 +1,10 @@
-import React, { Fragment, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
-import { Table, Form, Upload, Space, Button, Image, InputNumber, Input } from "antd";
+import { Table, Form, InputNumber, Input } from "antd";
 import { TuRepoService } from "../../../servicios/tuRepo/tuRepoService";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import DeleteCupon from "./deleteCupon";
-import Buscar from "./buscar";
-import { STORAGE_URL } from "../../../config/constants";
-import { toastr } from "react-redux-toastr";
 import Page from 'components/Page';
 import { Card, CardBody, CardHeader, Button as ButtonStrap } from 'reactstrap';
 
@@ -146,11 +143,6 @@ const TuRepoCuponDescuento = ({ updateMigas }) => {
               pagination={pagination}
               loading={loading}
               onChange={fetchAll}
-              components={{
-                body: {
-                  cell: EditableCell,
-                },
-              }}
               bordered
               scroll={{ x: 1200}}
             />

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Modal, Button, Card } from "antd";
+import React from "react";
+import { Modal } from "antd";
 import { ProductoService } from "../../../servicios/productoService";
 
 function DeleteProducto({status, handleClose, handleRefreshTable, activeRow}) {

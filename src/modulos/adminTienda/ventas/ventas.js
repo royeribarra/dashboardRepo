@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
-import { Table, Form, Upload, Space, Button } from "antd";
+import { Table, Form, Upload, Button } from "antd";
 import { VentaService } from "../../../servicios/ventaService";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import Buscar from "./buscar";
@@ -12,7 +12,6 @@ import {
   Card,
   CardBody,
   CardHeader,
-  Badge,
   Button as ButtonReact
 } from 'reactstrap';
 

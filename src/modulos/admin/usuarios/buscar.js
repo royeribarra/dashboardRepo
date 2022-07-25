@@ -3,7 +3,6 @@ import "antd/dist/antd.css";
 import { Form, Input, Select, InputNumber } from "antd";
 import { useEffect } from "react";
 import { useState } from "react";
-import axios from "axios";
 import { UserService } from "../../../servicios/userService";
 import { Card, CardBody, CardHeader, Button } from "reactstrap";
 
@@ -11,7 +10,6 @@ const { Option } = Select;
 
 const Buscar = ({form, handleParentSearch}) => {
   const userService = new UserService("users");
-  let [sedes, setSedes] = useState([]);
   let [roles, setRoles] = useState([]);
 
   const getRoles = () => {

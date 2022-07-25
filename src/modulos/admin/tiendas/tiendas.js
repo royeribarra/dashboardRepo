@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { NavLink, useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
-import { Table, Form, Button } from "antd";
+import { Table, Form } from "antd";
 import { TiendaService } from "../../../servicios/tiendaService";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import Buscar from "./buscar";
-import { Card, CardBlock, CardBody, CardHeader, Button as ButtonStrap } from "reactstrap";
+import { Card, CardBody, CardHeader, Button as ButtonStrap } from "reactstrap";
 import Page from 'components/Page';
 
 const Tiendas = ({ updateMigas }) => {

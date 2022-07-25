@@ -1,11 +1,11 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
-import { Table, Form, Card, Select, Input, Popover, Button, Tooltip, Tag, Row, Col } from "antd";
+import { Table, Form, Card, Popover, Button, Tag, Row, Col } from "antd";
 import { ProcesosFinalizadosService } from "../../../servicios/tienda/procesosFinalizadosService";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import Buscar from "./buscar";
-import { CardBlock, CardBody, CardHeader } from "reactstrap";
+import { CardBody, CardHeader } from "reactstrap";
 import Page from 'components/Page';
 
 const ProcesosFinalizados = ({ updateMigas }) => {

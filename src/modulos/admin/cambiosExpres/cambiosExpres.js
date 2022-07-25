@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
 import { Table, Form, Space, Popover, Button, Card, Image } from "antd";
@@ -8,7 +8,7 @@ import { updateMigas } from "../../../redux/actions/routeActions";
 import Buscar from "./buscar";
 import { CheckCircleTwoTone, CloseCircleTwoTone } from '@ant-design/icons';
 import { toastr } from "react-redux-toastr";
-import { CardBlock, CardBody, CardHeader } from "reactstrap";
+import { CardBody, CardHeader } from "reactstrap";
 import Page from 'components/Page';
 
 const CambiosExpres = ({ updateMigas }) => {

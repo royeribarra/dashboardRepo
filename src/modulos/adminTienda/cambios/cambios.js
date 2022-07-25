@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
-import { Table, Form, Card as CardAnt, Select, Input, Popover, Button, Tooltip, Tag, Row, Col, Image } from "antd";
+import { Table, Form, Card as CardAnt, Select, Input, Popover, Button, Tooltip, Image } from "antd";
 import { TiendaCambioService } from "../../../servicios/tienda/tiendaCambioService";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import Buscar from "./buscar";

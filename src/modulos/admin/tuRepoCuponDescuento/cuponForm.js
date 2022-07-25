@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { NavLink, useRouteMatch,  useHistory, useParams } from "react-router-dom";
 import { Form, Input, DatePicker, InputNumber, Button } from "antd";
 import { connect } from "react-redux";
@@ -6,7 +6,6 @@ import { toastr } from "react-redux-toastr";
 import { getProfiles, getSedes } from "../../../redux/actions/userActions";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import { TuRepoService } from "../../../servicios/tuRepo/tuRepoService";
-import axios from "axios";
 import Page from 'components/Page';
 import { Card, CardBody, CardHeader } from 'reactstrap';
 

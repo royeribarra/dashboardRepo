@@ -1,11 +1,10 @@
 import React from "react";
 import "antd/dist/antd.css";
-import { Form, Input, Select, InputNumber, Button, DatePicker } from "antd";
+import { Form, Select, Button, DatePicker } from "antd";
 import { useEffect } from "react";
 import { useState } from "react";
 import { TiendaService } from "../../../servicios/tiendaService";
 import moment from 'moment';
-import Page from '../../../components/Page';
 
 import {
   Card,

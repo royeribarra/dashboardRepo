@@ -5,7 +5,7 @@ import { Table, Form } from "antd";
 import { UserService } from "../../../servicios/userService";
 import { updateMigas } from "../../../redux/actions/routeActions";
 import Buscar from "./buscar";
-import { Card, CardBlock, CardBody, CardHeader, Button } from "reactstrap";
+import { Card, CardBody, CardHeader, Button } from "reactstrap";
 import Page from 'components/Page';
 
 const Usuarios = ({ updateMigas }) => {

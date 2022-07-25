@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "tabler-react/dist/Tabler.css";
 
 import { EstadisticaService } from "../../../servicios/tienda/estadisticaService";
