@@ -17,11 +17,21 @@ const TuRepo = ({ updateMigas }) => {
     {
       title: "Código",
       dataIndex: "codigo",
+      render: (codigo) => {
+        return(
+          <p>{codigo}</p>
+        );
+      }
     },
     {
       title: "Nombre del producto",
       dataIndex: "producto",
-      sorter: true
+      sorter: true,
+      render: (producto) => {
+        return(
+          <p>{producto}</p>
+        );
+      }
     },
     {
       title: "Datos del usuario",
@@ -49,7 +59,7 @@ const TuRepo = ({ updateMigas }) => {
           </Row>;
         return (
           <Popover content={content} title="" trigger="click">
-            <Button type="danger" size="small">Ver Detalle</Button>
+            <Button type="danger" size="small">Ver +</Button>
           </Popover>
         );
       }
@@ -73,8 +83,8 @@ const TuRepo = ({ updateMigas }) => {
       render: (imagen_boleta) => 
       {
         return (
-          <Button type="primary">
-            <a href = {`${process.env.REACT_APP_BASE_PATH}/tuRepo/${imagen_boleta}`} target = "_blank">Ver</a>
+          <Button type="primary" size="small">
+            <a href = {`${process.env.REACT_APP_BASE_PATH}/tuRepo/${imagen_boleta}`} target = "_blank">Ver +</a>
           </Button>
         );
       },
@@ -89,7 +99,7 @@ const TuRepo = ({ updateMigas }) => {
         );
         return (
           <Popover content={content} title="" trigger="click">
-            <Button type="danger" size="small">Ver</Button>
+            <Button type="danger" size="small">Ver +</Button>
           </Popover>
         );
       },
@@ -104,8 +114,13 @@ const TuRepo = ({ updateMigas }) => {
       },
     },
     {
-      title: "Precio de producto",
+      title: "Precio de producto (S/)",
       dataIndex: "precio",
+      render: (precio) => {
+        return(
+          <p>{precio}</p>
+        );
+      }
     },
     {
       title: "Motivo",

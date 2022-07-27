@@ -51,14 +51,14 @@ const Productos = ({ updateMigas }) => {
       dataIndex: "image",
       render: (image, row) => {
         return (
-          <Image src={image ? image : `http://localhost/tiendas/${row.dimensiones}`} alt="" width={200} />
+          <Image src={image ? image : `http://localhost/tiendas/${row.dimensiones}`} alt="" width={75} />
         );
       }
     },
     {
-      title: "Precio (S/.)",
+      title: "Precio (S/)",
       dataIndex: "price",
-      width: 110,
+      width: 150,
       render: (price) => {
         return (
           <p>{price}</p>
@@ -209,6 +209,38 @@ const Productos = ({ updateMigas }) => {
   return (
     <Page title="Productos">
       <Buscar form={form} handleParentSearch={fetchAll}/>
+      <Card style={{ marginBottom: "15px" }}>
+        <CardHeader>
+          Subir Csv
+        </CardHeader>
+        <CardBody>
+          <div className="col-md-6">
+            <div style={{ paddingBottom: "10px" }}>
+              <Upload
+                className="documents__content"
+                uploading={false}
+                fileList={filesRecorded}
+                multiple
+                beforeUpload={beforeUploadRecorded}
+                onRemove={onRemoveRecorded}
+                onPreview={(e) => {
+                  window.open(`${STORAGE_URL}${e.full_path}`);
+                }}
+              >
+                <Button
+                  ref={btnUploadFileRecorded}
+                  type="primary"
+                >
+                  Agregar archivos
+                </Button>
+              </Upload>
+            </div>
+            <ButtonReact type="primary" onClick={uploadCsv}>
+              Guardar
+            </ButtonReact>
+          </div>
+        </CardBody>
+      </Card>
       <Card>
         <CardHeader>Lista de productos</CardHeader>
         <CardBody>
@@ -224,33 +256,7 @@ const Productos = ({ updateMigas }) => {
                 </ButtonReact>
               </NavLink>
             </div>
-            <div className="col-md-6">
-              <div style={{ paddingBottom: "10px" }}>
-                <Upload
-                  className="documents__content"
-                  uploading={false}
-                  fileList={filesRecorded}
-                  multiple
-                  beforeUpload={beforeUploadRecorded}
-                  onRemove={onRemoveRecorded}
-                  onPreview={(e) => {
-                    window.open(`${STORAGE_URL}${e.full_path}`);
-                  }}
-                >
-                  <Button
-                    ref={btnUploadFileRecorded}
-                    className="boton boton--transparent-azul documents__content-button--select"
-                    type="button"
-                  >
-                    <span className="icono icon-importar"></span>Agregar
-                    archivos
-                  </Button>
-                </Upload>
-              </div>
-              <Button type="primary" onClick={uploadCsv}>
-                Guardar
-              </Button>
-            </div>
+            
           </div>
           <div>
             <Table
@@ -261,7 +267,6 @@ const Productos = ({ updateMigas }) => {
               loading={loading}
               onChange={fetchAll}
               bordered
-              scroll={1700}
             />
             <DeleteProducto 
               status={showDelModal}

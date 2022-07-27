@@ -315,12 +315,11 @@ const Configuracion = ({ updateMigas }) => {
               <CardBody>
                 <Form.Item
                   tooltip="Plazo para cambiar o devolver un producto desde la fecha de compra."
-                    className="formulario__label"
-                    name={"plazo"}
-                    label="Plazo (Días)"
-                    rules={[{ required: true }]}
+                  name={"plazo"}
+                  label="Plazo (Días)"
+                  rules={[{ required: true }]}
                 >
-                    <Input className="input-padre" />
+                  <Input style={{ width: "auto" }} />
                 </Form.Item>
               </CardBody>
             </div>

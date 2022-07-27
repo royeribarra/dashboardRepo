@@ -77,7 +77,6 @@ const Perfil = ({ updateMigas }) => {
                 </div>
                 <div className="col-md-6">
                   <Form.Item
-                    className="formulario__label"
                     name={"father_lastname"}
                     label="Apellidos"
                   >
@@ -86,40 +85,53 @@ const Perfil = ({ updateMigas }) => {
                 </div>
                   <div className="col-md-6">
                     <Form.Item
-                        className="formulario__label"
-                        name={"email"}
-                        label="Email"
+                      name={"email"}
+                      label="Email"
                     >
-                        <Input disabled />
+                      <Input disabled />
                     </Form.Item>
                   </div>
                   <div className="col-md-6">
                     <Form.Item
-                        className="formulario__label"
-                        name={"phone"}
-                        label="Teléfono"
+                      name={"phone"}
+                      label="Teléfono"
                     >
-                        <Input />
+                      <Input />
                     </Form.Item>
                   </div>
                   <div className="col-md-6">
                     <Form.Item
-                        className="formulario__label"
-                        name={"dni"}
-                        label="DNI"
+                      name={"dni"}
+                      label="DNI"
                     >
-                        <Input />
+                      <Input />
                     </Form.Item>
                   </div>
-                  <div className="col-md-6">
-                    <Form.Item
-                        className="formulario__label"
+              </div>
+              <div>
+                <CardHeader>
+                  Cambio de contraseña
+                </CardHeader>
+                <CardBody>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <Form.Item
                         name={"password"}
-                        label="Contraseña"
-                    >
+                        label="Contraseña anterior"
+                      >
                         <Input.Password />
-                    </Form.Item>
+                      </Form.Item>
+                    </div>
+                    {/* <div className="col-md-6">
+                      <Form.Item
+                        name={"new_password"}
+                        label="Nueva contraseña"
+                      >
+                        <Input.Password />
+                      </Form.Item>
+                    </div> */}
                   </div>
+                </CardBody>
               </div>
             </div>
             <Form.Item>

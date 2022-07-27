@@ -238,11 +238,11 @@ const ProductoForm = ({ profiles, sedes, getProfiles, getSedes, updateMigas }) =
               </div>
             </div>
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" style={{ margin: "10px" }}>
                 Guardar
               </Button>
               <NavLink to="/tienda/productos">
-                <Button type="danger">Cancelar</Button>
+                <Button type="danger" style={{ margin: "10px" }}>Cancelar</Button>
               </NavLink>
             </Form.Item>
           </Form>

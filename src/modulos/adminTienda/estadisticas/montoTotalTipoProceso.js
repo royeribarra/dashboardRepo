@@ -29,7 +29,7 @@ function MontoTotalTipoProceso({fechas}) {
   return (
     <Card>
       <CardHeader>
-        Monto Total por Tipo de Proceso (S/.)
+        Monto Total por Tipo de Proceso (S/)
       </CardHeader>
       <CardBody>
         {/* <Row>

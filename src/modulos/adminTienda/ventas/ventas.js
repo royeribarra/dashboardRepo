@@ -132,7 +132,7 @@ const Ventas = ({ updateMigas }) => {
       }
     },
     {
-      title: "Precio",
+      title: "Precio (S/)",
       dataIndex: "precio_pagado",
       render: (precio_pagado) => {
         return (
@@ -141,7 +141,7 @@ const Ventas = ({ updateMigas }) => {
       }
     },
     {
-      title: "Nombre Cliente",
+      title: "Nombre cliente",
       dataIndex: "nombre_cliente",
       render: (nombre_cliente) => {
         return (
@@ -150,7 +150,7 @@ const Ventas = ({ updateMigas }) => {
       }
     },
     {
-      title: "Apellido Cliente",
+      title: "Apellido cliente",
       dataIndex: "apellido_cliente",
       render: (apellido_cliente) => {
         return (
@@ -211,7 +211,7 @@ const Ventas = ({ updateMigas }) => {
       <Card>
         <CardHeader>Lista de ventas</CardHeader>
         <CardBody>
-          <div className="row">
+          <div style={{ marginBottom: "10px" }}>
             <div style={{ marginBottom: "10px" }}>
               <Upload
                 className="documents__content"
@@ -226,18 +226,16 @@ const Ventas = ({ updateMigas }) => {
               >
                 <Button
                   ref={btnUploadFileRecorded}
-                  className="boton boton--transparent-azul documents__content-button--select"
-                  type="button"
+                  type="primary"
                   style={{ marginRight: "10px" }}
                 >
-                  <span className="icono icon-importar"></span>Agregar
-                  archivos
+                  Agregar archivos
                 </Button>
               </Upload>
             </div>
-            <Button type="primary" onClick={uploadCsv}>
+            <ButtonReact type="primary" onClick={uploadCsv}>
               Guardar
-            </Button>
+            </ButtonReact>
           </div>
           <div>
             <Table

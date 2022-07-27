@@ -10,6 +10,7 @@ import { CheckCircleTwoTone, CloseCircleTwoTone } from '@ant-design/icons';
 import { toastr } from "react-redux-toastr";
 import { CardBody, CardHeader } from "reactstrap";
 import Page from 'components/Page';
+import "./style.css";
 
 const CambiosExpres = ({ updateMigas }) => {
   const cambioService = new RepoCambioExpresService("repo/cambios-expres");
@@ -108,7 +109,7 @@ const CambiosExpres = ({ updateMigas }) => {
       }
     },
     {
-      title: "Precio S/",
+      title: "Precio (S/)",
       dataIndex: "total_pago",
       render: (total_pago) => {
         return(

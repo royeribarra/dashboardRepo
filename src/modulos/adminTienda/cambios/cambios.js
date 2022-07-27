@@ -92,9 +92,14 @@ const Cambios = ({ updateMigas }) => {
     {
       title: "Código",
       dataIndex: "codigo_repo",
+      render: (codigo_repo) => {
+        return (
+          <p>{codigo_repo}</p>
+        );
+      }
     },
     {
-      title: "Precio S/",
+      title: "Precio (S/)",
       dataIndex: "total_productos_gestion",
       render: (total_productos_gestion) => {
         return (
@@ -152,11 +157,11 @@ const Cambios = ({ updateMigas }) => {
       }
     },
     {
-      title: "Cobro neto",
+      title: "Cobro neto (S/)",
       dataIndex: "cobro_neto",
       render: (cobro_neto) => {
         return (
-          <p>S/. {cobro_neto}</p>
+          <p>{cobro_neto}</p>
         );
       }
     },
@@ -187,7 +192,7 @@ const Cambios = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" shape="small">Ver +</Button>
+            <Button type="primary" size="small">Ver +</Button>
           </Popover>
         );
       }
@@ -418,8 +423,9 @@ const Cambios = ({ updateMigas }) => {
       }
     },
     {
-      title: "Precio S/",
+      title: "Precio (S/)",
       dataIndex: "total_pago",
+      width: 150,
       render: (total_pago) => {
         return (
           <p>{total_pago}</p>
@@ -462,7 +468,7 @@ const Cambios = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" shape="small">Ver +</Button>
+            <Button type="primary" size="small">Ver +</Button>
           </Popover>
         );
       }
@@ -594,7 +600,7 @@ const Cambios = ({ updateMigas }) => {
               pagination={paginationError}
               loading={loading}
               onChange={fetchAllByError}
-              scroll={{ x: 1500 }}
+              scroll={{ x: 1800 }}
             />
           </CardBody>
         </Card>

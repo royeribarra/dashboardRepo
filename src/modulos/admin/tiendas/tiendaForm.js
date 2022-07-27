@@ -48,7 +48,7 @@ const DatosFacturacion = ({data, mandarTipoFee, mandarValorFee}) => {
   }, [data]);
 
   return(
-    <div className="col-4">
+    <div className="col-md-4">
       <h6>{data.nombre}</h6>
         <Radio.Group onChange={onChangeRadio} defaultValue={1} value={tipo}>
           <Radio value={1}>Variable</Radio>
@@ -82,9 +82,9 @@ const TiendaForm = ({ updateMigas }) => {
   const [info, setInfo] = useState([]);
   const [infoFeeTienda, setInfoFeeTienda] = useState([]);
   const [feeTienda, setFeeTienda] = useState([
-    {nombre: 'Fee Devolucion', codigo: 1, tipo: 1, monto: 0},
-    {nombre: 'Fee Cambio', codigo: 2, tipo: 1, monto: 0},
-    {nombre: 'Fee Upseeling', codigo: 3, tipo: 1, monto: 0}
+    {nombre: 'Fee devolución', codigo: 1, tipo: 1, monto: 0},
+    {nombre: 'Fee cambio', codigo: 2, tipo: 1, monto: 0},
+    {nombre: 'Fee upseeling', codigo: 3, tipo: 1, monto: 0}
   ]);
   const [latitud, setLatitud] = useState();
   const [longitud, setLongitud] = useState();
@@ -174,6 +174,7 @@ const TiendaForm = ({ updateMigas }) => {
   useEffect(() => {
     updateMigas(url) 
     if (id) {
+      getTiendaInfo();
     }
   }, [] );
 
@@ -201,9 +202,7 @@ const TiendaForm = ({ updateMigas }) => {
   return (
     <Page title="Tienda">
       <Card>
-        <CardHeader>
-          Información general
-        </CardHeader>
+        
         <CardBody>
           <Form
             className="formulario"
@@ -213,257 +212,259 @@ const TiendaForm = ({ updateMigas }) => {
             validateMessages={validateMessages}
             layout="vertical"
           >
-            <div className="caja-contenedor__body mt-2">
-              <div className="row">
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"business_name"}
-                    label="Nombre de tienda"
-                    rules={[{ required: true }]}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"razon_social"}
-                    label="Razón Social"
-                    rules={[{ required: true }]}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"ruc"}
-                    label="RUC"
-                    rules={[{ required: true }]}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"departamento"}
-                    label="Departamento"
-                    rules={[{ required: true }]}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"provincia"}
-                    label="Provincia"
-                    rules={[{ required: true }]}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"distrito"}
-                    label="Distrito"
-                    rules={[{ required: true }]}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"address"}
-                    label="Dirección"
-                    rules={[{ required: true }]}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"email"}
-                    label="Email"
-                    rules={[{ required: true }]}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="form-group col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    name={"state"}
-                    label="Estado"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Seleccione un estado!",
-                      },
-                    ]}
-                  >
-                    <Radio.Group className="mt-2">
-                      <Radio value={1}>Activo</Radio>
-                      <Radio value={0} className="ml-3">
-                        Inactivo
-                      </Radio>
-                    </Radio.Group>
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    label="Latitud"
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    label="Longitud"
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-              </div>
-              <div className="row">
-                <div className="images col-md-4">
-                  <div className="caja-contenedor__header caja-contenedor__header--separador row d-flex align-items-center">
-                    <h2 className="caja-contenedor__titulo col-6">
-                      Subir logo
-                    </h2>
-                  </div>
-                  <div className="images__container px-3 mt-3">
-                    <ImageUploading
-                      className="images__wrapper"
-                      multiple
-                      value={images}
-                      maxNumber={maxNumber}
-                      dataURLKey="data_url"
-                      onChange={onChangeImages}
+            <div>
+              <CardHeader>
+                Información general
+              </CardHeader>
+              <CardBody>
+                <div className="row">
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"business_name"}
+                      label="Nombre de tienda"
+                      rules={[{ required: true }]}
                     >
-                      {({
-                        imageList,
-                        onImageUpload,
-                        onImageRemove,
-                        isDragging,
-                        dragProps,
-                      }) => (
-                        <div className="figures">
-                          <ButtonStrap
-                            className="boton boton--transparent-azul figures__content-button--select"
-                            type="button"
-                            style={isDragging ? { color: "red" } : undefined}
-                            onClick={onImageUpload}
-                            {...dragProps}
-                          >
-                            <span className="icono icon-mas"></span>
-                            Agregar Imagenes
-                          </ButtonStrap>
-                          <div className="figures__content">
-                            {imageList.map((image, index) => (
-                              <Fragment key={index}>
-                                <div className="figures__images">
-                                  <div className="figures__images-wrapper">
-                                    <img
-                                      className="figures__images-img"
-                                      src={image["data_url"]}
-                                      alt=""
-                                      width="100"
-                                    />
-                                    <ButtonStrap
-                                      className="figures__content-button figures__content-button--view"
-                                      type="button"
-                                      onClick={() => openGallery(index)}
-                                    >
-                                      <span className=" icon-ojo">Ver</span>
-                                    </ButtonStrap>
-                                    <ButtonStrap
-                                      className="figures__content-button figures__content-button--remove"
-                                      type="button"
-                                      onClick={() => onImageRemove(index)}
-                                    >
-                                      <span className="icon-tacho">X</span>
-                                    </ButtonStrap>
-                                  </div>
-                                </div>
-                              </Fragment>
-                            ))}
-                          </div>
-                          <ReactBnbGallery
-                            show={isOpen}
-                            activePhotoIndex={galleryActiveIdx}
-                            photos={imagesGallery}
-                            onClose={() => setIsOpen(false)}
-                          />
-                        </div>
-                      )}
-                    </ImageUploading>
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"razon_social"}
+                      label="Razón Social"
+                      rules={[{ required: true }]}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"ruc"}
+                      label="RUC"
+                      rules={[{ required: true }]}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"departamento"}
+                      label="Departamento"
+                      rules={[{ required: true }]}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"provincia"}
+                      label="Provincia"
+                      rules={[{ required: true }]}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"distrito"}
+                      label="Distrito"
+                      rules={[{ required: true }]}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"address"}
+                      label="Dirección"
+                      rules={[{ required: true }]}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"email"}
+                      label="Email"
+                      rules={[{ required: true }]}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="form-group col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      name={"state"}
+                      label="Estado"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Seleccione un estado!",
+                        },
+                      ]}
+                    >
+                      <Radio.Group className="mt-2">
+                        <Radio value={1}>Activo</Radio>
+                        <Radio value={0} className="ml-3">
+                          Inactivo
+                        </Radio>
+                      </Radio.Group>
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      label="Latitud"
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      label="Longitud"
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
                   </div>
                 </div>
-              </div>
-              <div className="row" style={{ marginTop: "15px" }}>
-                <div className="caja-contenedor__header caja-contenedor__header--separador row d-flex align-items-center">
-                  <h2 className="caja-contenedor__titulo col-6">
-                    Datos Contacto
-                  </h2>
+              </CardBody>
+            </div>
+            <div>
+              <CardHeader>
+                Subir logo
+              </CardHeader>
+              <CardBody>
+                <ImageUploading
+                  className="images__wrapper"
+                  multiple
+                  value={images}
+                  maxNumber={maxNumber}
+                  dataURLKey="data_url"
+                  onChange={onChangeImages}
+                >
+                  {({
+                    imageList,
+                    onImageUpload,
+                    onImageRemove,
+                    isDragging,
+                    dragProps,
+                  }) => (
+                    <div className="figures">
+                      <ButtonStrap
+                        className="boton boton--transparent-azul figures__content-button--select"
+                        type="button"
+                        style={isDragging ? { color: "red" } : undefined}
+                        onClick={onImageUpload}
+                        {...dragProps}
+                      >
+                        <span className="icono icon-mas"></span>
+                        Agregar Imagenes
+                      </ButtonStrap>
+                      <div className="figures__content">
+                        {imageList.map((image, index) => (
+                          <Fragment key={index}>
+                            <div className="figures__images">
+                              <div className="figures__images-wrapper">
+                                <img
+                                  className="figures__images-img"
+                                  src={image["data_url"]}
+                                  alt=""
+                                  width="100"
+                                />
+                                <ButtonStrap
+                                  className="figures__content-button figures__content-button--view"
+                                  type="button"
+                                  onClick={() => openGallery(index)}
+                                >
+                                  <span className=" icon-ojo">Ver</span>
+                                </ButtonStrap>
+                                <ButtonStrap
+                                  className="figures__content-button figures__content-button--remove"
+                                  type="button"
+                                  onClick={() => onImageRemove(index)}
+                                >
+                                  <span className="icon-tacho">X</span>
+                                </ButtonStrap>
+                              </div>
+                            </div>
+                          </Fragment>
+                        ))}
+                      </div>
+                      <ReactBnbGallery
+                        show={isOpen}
+                        activePhotoIndex={galleryActiveIdx}
+                        photos={imagesGallery}
+                        onClose={() => setIsOpen(false)}
+                      />
+                    </div>
+                  )}
+                </ImageUploading>
+              </CardBody>
+            </div>
+            <div>
+              <CardHeader>
+                Datos Contacto
+              </CardHeader>
+              <CardBody>
+                <div className="row">
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      label="Nombres"
+                      name={"nombre_contacto"}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      label="Apellidos"
+                      name={"apellido_contacto"}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
+                  <div className="col-md-4">
+                    <Form.Item
+                      className="formulario__label"
+                      label="Teléfono"
+                      name={"telefono_contacto"}
+                    >
+                      <Input className="input-padre" />
+                    </Form.Item>
+                  </div>
                 </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    label="Nombres"
-                    name={"nombre_contacto"}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    label="Apellidos"
-                    name={"apellido_contacto"}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-                <div className="col-md-4">
-                  <Form.Item
-                    className="formulario__label"
-                    label="Teléfono"
-                    name={"telefono_contacto"}
-                  >
-                    <Input className="input-padre" />
-                  </Form.Item>
-                </div>
-              </div>
-              <div className="row" style={{ marginTop: "15px" }}>
-                <div className="caja-contenedor__header caja-contenedor__header--separador row d-flex align-items-center">
-                  <h2 className="caja-contenedor__titulo col-6">
-                    Datos Facturación
-                  </h2>
-                </div>
+              </CardBody>
+            </div>
+            <div>
+              <CardHeader>
+                Datos Facturación     
+              </CardHeader>
+              <CardBody>
+                <div className="row">
                 {
                   ListadoFee
                 }
-              </div>
+                </div>
+              </CardBody>
             </div>
-            <div className="row mt-3">
-              <div className="col">
-                <Button className="boton boton--verde mr-4" htmlType="submit">
-                  <span className="icono icon-guardar-disquet mr-2"></span>
-                  Guardar
-                </Button>
-                <NavLink className="boton boton--rojo" to="/admin/tiendas">
-                  <span className="icono icon-regresar mr-2"></span> Cancelar
-                </NavLink>
-              </div>
-            </div>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" style={{ margin: "10px" }}>
+                Guardar
+              </Button>
+              <NavLink to="/admin/tiendas">
+                <Button type="danger" style={{ margin: "10px" }}>Cancelar</Button>
+              </NavLink>
+            </Form.Item>
           </Form>
         </CardBody>
       </Card>

@@ -150,7 +150,7 @@ const Tiendas = ({ updateMigas }) => {
           <div>
             <NavLink
               exact={false}
-              to={`${path}/crear-tienda`}
+              to={`tienda/crear`}
               className="item__link boton  boton--transparent-azul "
             >
               <ButtonStrap style={{ marginBottom: "10px" }}>Crear Tienda</ButtonStrap>

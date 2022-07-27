@@ -97,7 +97,7 @@ const Devoluciones = ({ updateMigas }) => {
       }
     },
     {
-      title: "Precio S/",
+      title: "Precio (S/)",
       dataIndex: "total_pago",
       render: (total_pago) => {
         return(
@@ -129,15 +129,6 @@ const Devoluciones = ({ updateMigas }) => {
       render: (delivery) => {
         return(
           <p>{delivery? delivery.direccion + '-' + delivery.referencia : ''}</p>
-        );
-      }
-    },
-    {
-      title: "Fee",
-      dataIndex: "fee",
-      render: () => {
-        return (
-          <p></p>
         );
       }
     },
@@ -296,7 +287,7 @@ const Devoluciones = ({ updateMigas }) => {
             pagination={pagination}
             loading={loading}
             onChange={fetchAll}
-            scroll={{ x: 2200}}
+            scroll={{ x: 2400}}
           />
         </CardBody>
       </Card>

@@ -104,18 +104,18 @@ const ProcesosFinalizados = ({ updateMigas }) => {
           </Row>;
         return (
           <Popover content={content} title="" trigger="click">
-            <Button type="danger" size="small">Productos</Button>
+            <Button type="danger" size="small">Ver +</Button>
           </Popover>
         );
       }
     },
     {
-      title: "Precio",
-      width: 105,
+      title: "Precio (S/)",
+      width: 125,
       dataIndex: "total_productos_gestion",
       render: (total_productos_gestion) => {
         return (
-          <p>S/. {total_productos_gestion}</p>
+          <p>{total_productos_gestion}</p>
         );
       }
     },
@@ -155,7 +155,7 @@ const ProcesosFinalizados = ({ updateMigas }) => {
             {row.tipo_servicio === 3 && <p>No aplica</p>}
             {row.tipo_servicio !== 3 && 
             <Popover content={content} title="Nuevos Productos" trigger="click">
-              <Button type="danger" size="small">Nuevos Productos</Button>
+              <Button type="danger" size="small">Ver +</Button>
             </Popover>}
           </>
         );
@@ -171,20 +171,20 @@ const ProcesosFinalizados = ({ updateMigas }) => {
       }
     },
     {
-      title: "Cobro neto",
+      title: "Cobro neto (S/)",
       dataIndex: "cobro_neto",
       render: (cobro_neto) => {
         return(
-          <p>S/. {cobro_neto}</p>
+          <p>{cobro_neto}</p>
         );
       }
     },
     {
-      title: "Cobro logístico",
+      title: "Cobro logístico (S/)",
       dataIndex: "costo_logistico",
       render: (costo_logistico) => {
         return(
-          <p>S/. {costo_logistico}</p>
+          <p>{costo_logistico}</p>
         );
       }
     },
@@ -237,7 +237,7 @@ const ProcesosFinalizados = ({ updateMigas }) => {
             pagination={pagination}
             loading={loading}
             onChange={fetchAll}
-            scroll={{ x: 1800}}
+            scroll={{ x: 2000}}
           />
         </CardBody>
       </Card>

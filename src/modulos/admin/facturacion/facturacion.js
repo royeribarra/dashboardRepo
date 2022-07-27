@@ -72,7 +72,7 @@ const Facturacion = ({ updateMigas }) => {
       }
     },
     {
-      title: "Monto base",
+      title: "Monto base (S/)",
       dataIndex: "producto_gestion",
       render: (producto_gestion) => {
         let monto_base = 0;
@@ -80,7 +80,7 @@ const Facturacion = ({ updateMigas }) => {
           monto_base = parseFloat(monto_base + element.precio).toFixed(2);
         });
         return (
-          <p>S/ {monto_base}</p>
+          <p>{monto_base}</p>
         );
       }
     },
@@ -94,7 +94,7 @@ const Facturacion = ({ updateMigas }) => {
       }
     },
     {
-      title: "Fee repo",
+      title: "Fee Repo (S/)",
       dataIndex: "producto_gestion",
       render: (producto_gestion) => {
         let monto_base = 0;
@@ -109,12 +109,12 @@ const Facturacion = ({ updateMigas }) => {
         }
         
         return (
-          <p>S/ {total}</p>
+          <p>{total}</p>
         );
       }
     },
     {
-      title: "Fee logístico",
+      title: "Fee logístico (S/)",
       dataIndex: "cliente_paga_logistico",
       render: (cliente_paga_logistico, row) => {
         let costo_logistico = 0.00;
@@ -130,12 +130,12 @@ const Facturacion = ({ updateMigas }) => {
           }
         }
         return (
-          <p>S/ {parseFloat(costo_logistico).toFixed(2)}</p>
+          <p>{parseFloat(costo_logistico).toFixed(2)}</p>
         );
       }
     },
     {
-      title: "Upselling",
+      title: "Upselling (S/)",
       dataIndex: "nuevos_productos",
       render: (nuevos_productos, row) => {
         let monto_devolucion = 0, monto_nuevos_productos = 0;
@@ -154,14 +154,14 @@ const Facturacion = ({ updateMigas }) => {
             }
             {
               (row.tipo_servicio === 1 || row.tipo_servicio === 2) && 
-              <p>S/ {upselling}</p>
+              <p>{upselling}</p>
             }
           </>
         );
       }
     },
     {
-      title: "Fee upselling",
+      title: "Fee upselling (S/)",
       dataIndex: "nuevos_productos",
       render: (nuevos_productos, row) => {
         let monto_devolucion = 0, monto_nuevos_productos = 0;
@@ -181,7 +181,7 @@ const Facturacion = ({ updateMigas }) => {
             }
             {
               (row.tipo_servicio === 1 || row.tipo_servicio === 2) && 
-              <p>S/ {total}</p>
+              <p>{total}</p>
             }
           </>
         );
@@ -324,7 +324,7 @@ const Facturacion = ({ updateMigas }) => {
           <div style={{ backgroundColor: "white", color: "black", margin: "10px 0px"}}>
             <div className="data-informativa" style={{ backgroundColor: "#EAF2F1"}}>
               <div>Total fee logístico:</div>
-              <div>S/ {feesTienda.fee_logistico}</div>
+              <div>S/ {parseFloat(feesTienda.fee_logistico).toFixed(2)}</div>
             </div>
             <div className="data-informativa">
               <div>Total upselling</div>

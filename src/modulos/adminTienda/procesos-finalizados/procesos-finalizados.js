@@ -99,14 +99,14 @@ const ProcesosFinalizados = ({ updateMigas }) => {
           </Row>;
         return (
           <Popover content={content} title="" trigger="click">
-            <Button type="danger" size="small">Productos</Button>
+            <Button type="danger" size="small">Ver +</Button>
           </Popover>
         );
       }
     },
     {
-      title: "Precio S/",
-      width: 105,
+      title: "Precio (S/)",
+      width: 125,
       dataIndex: "total_productos_gestion",
       render: (total_productos_gestion) => {
         return (
@@ -150,7 +150,7 @@ const ProcesosFinalizados = ({ updateMigas }) => {
             {row.tipo_servicio === 3 && <p>No aplica</p>}
             {row.tipo_servicio !== 3 && 
             <Popover content={content} title="Nuevos Productos" trigger="click">
-              <Button type="danger" size="small">Nuevos Productos</Button>
+              <Button type="danger" size="small">Ver +</Button>
             </Popover>}
           </>
         );
@@ -213,7 +213,7 @@ const ProcesosFinalizados = ({ updateMigas }) => {
             pagination={pagination}
             loading={loading}
             onChange={fetchAll}
-            scroll={{ x: 2200 }}
+            
           />
         </CardBody>
       </Card>

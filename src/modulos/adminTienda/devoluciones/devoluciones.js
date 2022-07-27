@@ -100,7 +100,7 @@ const Devoluciones = ({ updateMigas }) => {
       }
     },
     {
-      title: "Monto devolución S/",
+      title: "Monto devolución (S/)",
       dataIndex: "total_devolucion",
       render: (total_devolucion) => {
         return (
@@ -144,7 +144,7 @@ const Devoluciones = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" shape="small">Ver Productos</Button>
+            <Button type="primary" size="small">Ver Productos</Button>
           </Popover>
         );
       }
@@ -407,7 +407,7 @@ const Devoluciones = ({ updateMigas }) => {
       }
     },
     {
-      title: "Monto devolución S/",
+      title: "Monto devolución (S/)",
       dataIndex: "total_devolucion",
       render: (total_devolucion) => {
         return (
@@ -451,7 +451,7 @@ const Devoluciones = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" shape="small">Ver Productos</Button>
+            <Button type="primary" size="small">Ver +</Button>
           </Popover>
         );
       }
@@ -463,8 +463,8 @@ const Devoluciones = ({ updateMigas }) => {
         return(
           <div>
             {producto_gestion.map((elemento) => 
-              <Button type="primary" key={elemento.id}>
-                <a href = {`${process.env.REACT_APP_BASE_PATH}/myfiles/${elemento.imagen_boleta}`} target = "_blank">Ver</a>
+              <Button type="primary" key={elemento.id} size="small">
+                <a href = {`${process.env.REACT_APP_BASE_PATH}/myfiles/${elemento.imagen_boleta}`} target = "_blank">Ver +</a>
               </Button>
             )}
           </div>
@@ -576,7 +576,7 @@ const Devoluciones = ({ updateMigas }) => {
                 pagination={paginationError}
                 loading={loading}
                 onChange={fetchAllByError}
-                scroll={{x : 1500}}
+                scroll={{x : 1800}}
               />
             </CardBody>
           </Card>

@@ -9,6 +9,7 @@ import { Table, Form, Space, Popover, Button, Card, Image, DatePicker } from "an
 import moment from 'moment';
 import { CheckCircleTwoTone, CloseCircleTwoTone } from '@ant-design/icons';
 import Buscar from './buscar';
+import "./style.css";
 
 const tableTypes = ['', 'bordered', 'striped', 'hover'];
 
@@ -183,7 +184,7 @@ const CambiosEstandar = () => {
       }
     },
     {
-      title: "Precio S/",
+      title: "Precio (S/)",
       dataIndex: "total_pago",
       render: (total_pago) => {
         return(
@@ -417,7 +418,7 @@ const CambiosEstandar = () => {
             pagination={pagination}
             loading={loading}
             onChange={fetchAll}
-            scroll={{ x: 2600}}
+            scroll={{ x: 3000}}
           />
         </CardBody>
       </Card>

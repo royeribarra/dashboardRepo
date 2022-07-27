@@ -27,7 +27,7 @@ class AdminRoutes extends React.Component{
         <MainLayout breakpoint={this.props.breakpoint}>
           <React.Suspense fallback={<PageSpinner />}>
             <Route exact path={`/admin/tiendas`}                         component = { Tiendas } />
-            <Route exact path={`/admin/tiendas/crear-tienda`}            component = { TiendaForm } />
+            <Route exact path={`/admin/tienda/crear`}                    component = { TiendaForm } />
             <Route exact path={`/admin/tiendas/:id`}                     component = { TiendaForm } />
 
             <Route exact path={`/admin/distritos`}                       component = { Distritos } />

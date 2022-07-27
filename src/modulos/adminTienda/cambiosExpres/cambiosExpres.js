@@ -33,7 +33,6 @@ const CambiosExpres = ({ updateMigas }) => {
     },
     {
       title: "Fecha delivery",
-      width: 130,
       dataIndex: "fecha_recojo",
       sorter: true,
       render: (fecha_recojo) => {
@@ -45,7 +44,6 @@ const CambiosExpres = ({ updateMigas }) => {
     {
       title: "Productos a devolver",
       dataIndex: "producto_gestion",
-      width: 100,
       render: (producto_gestion, row) => {
         const content = producto_gestion.map((elemento) => 
           <div className="card-imagen-producto-devolucion">
@@ -100,7 +98,7 @@ const CambiosExpres = ({ updateMigas }) => {
       }
     },
     {
-      title: "Precio",
+      title: "Precio (S/)",
       dataIndex: "total_productos_gestion",
       render: (total_productos_gestion) => {
         return (
@@ -120,7 +118,6 @@ const CambiosExpres = ({ updateMigas }) => {
     {
       title: "Productos nuevos",
       dataIndex: "nuevos_productos",
-      width: 100,
       render: (nuevos_productos) => {
         const content = nuevos_productos.map((producto) => 
           <div className="card-imagen-producto-devolucion">
@@ -159,7 +156,7 @@ const CambiosExpres = ({ updateMigas }) => {
       }
     },
     {
-      title: "Cobro Neto S/",
+      title: "Cobro Neto (S/)",
       dataIndex: "cobro_neto",
       render: (cobro_neto) => {
         return (
@@ -194,7 +191,7 @@ const CambiosExpres = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" shape="small">Ver +</Button>
+            <Button type="primary" size="small">Ver +</Button>
           </Popover>
         );
       }
@@ -338,7 +335,6 @@ const CambiosExpres = ({ updateMigas }) => {
     {
       title: "Fecha de orden",
       dataIndex: "created_at",
-      width: 130,
       render: (created_at) => {
         return (
           <p>{created_at.substr(0,10)}</p>
@@ -357,7 +353,6 @@ const CambiosExpres = ({ updateMigas }) => {
     {
       title: "Productos a devolver",
       dataIndex: "producto_gestion",
-      width: 100,
       render: (producto_gestion, row) => {
         const content = producto_gestion.map((elemento) => 
           <div className="card-imagen-producto-devolucion">
@@ -412,9 +407,9 @@ const CambiosExpres = ({ updateMigas }) => {
       }
     },
     {
-      title: "Precio S/",
+      title: "Precio (S/)",
       dataIndex: "total_pago",
-      width: 100,
+      width: 150,
       render: (total_pago) => {
         return (
           <p>{total_pago}</p>
@@ -458,7 +453,7 @@ const CambiosExpres = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" shape="small">Ver +</Button>
+            <Button type="primary" size="small">Ver +</Button>
           </Popover>
         );
       }
@@ -569,7 +564,7 @@ const CambiosExpres = ({ updateMigas }) => {
               pagination={paginationError}
               loading={loading}
               onChange={fetchAllByError}
-              scroll={{x : 1500}}
+              scroll={{x : 1800}}
             />
           </CardBody>
         </Card>
