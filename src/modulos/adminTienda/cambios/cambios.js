@@ -52,7 +52,7 @@ const Cambios = ({ updateMigas }) => {
               bodyStyle={{ padding: 0}}
               cover={
                 <Image
-                  src={elemento.producto? elemento.producto.imagen: `${process.env.REACT_APP_BASE_PATH}/myfiles/${elemento.imagen_producto}`}
+                  src={elemento.producto? elemento.producto.image: `${process.env.REACT_APP_BASE_PATH}/myfiles/${elemento.imagen_producto}`}
                   alt={elemento.nombre_producto}
                 />
               }
