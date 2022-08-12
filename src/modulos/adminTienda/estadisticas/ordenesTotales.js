@@ -44,7 +44,7 @@ function OrdenesTotales({fechas}) {
               number={ordenes.cambios}
               color="primary"
               progress={{
-                value: (efectividad.cambios_aceptados/ordenes.cambios)*100
+                value: parseFloat((efectividad.cambios_aceptados/ordenes.cambios)*100).toFixed(2)
               }}
             />
           </Col>
@@ -55,7 +55,7 @@ function OrdenesTotales({fechas}) {
               number={ordenes.devoluciones}
               color="primary"
               progress={{
-                value: (efectividad.devoluciones_aceptadas/ordenes.devoluciones)*100
+                value: parseFloat((efectividad.devoluciones_aceptadas/ordenes.devoluciones)*100).toFixed(2)
               }}
             />
           </Col>
@@ -65,6 +65,9 @@ function OrdenesTotales({fechas}) {
               subtitle="Efectividad"
               number={ordenes.servicioTecnico}
               color="primary"
+              progress={{
+                value: 100.00
+              }}
             />
           </Col> 
         </Row>

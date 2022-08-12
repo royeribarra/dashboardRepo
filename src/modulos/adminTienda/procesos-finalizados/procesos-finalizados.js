@@ -44,11 +44,11 @@ const ProcesosFinalizados = ({ updateMigas }) => {
         let tipo, color;
         switch(tipo_servicio) {
           case 1:
-            tipo = 'Estándar';
+            tipo = 'Cambio estándar';
             color = 'green';
             break;
           case 2:
-            tipo = 'Deluxe';
+            tipo = 'Cambio express';
             color = 'purple'
             break;
           case 3:
