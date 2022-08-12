@@ -68,7 +68,9 @@ const Cambios = ({ updateMigas }) => {
         </div>
         return (
           <Popover content={general} title="" trigger="click">
-            <Button type="danger" size="small">Ver +</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="danger" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -151,7 +153,9 @@ const Cambios = ({ updateMigas }) => {
         </div>
         return (
           <Popover content={general} title="" trigger="click">
-            <Button type="danger" size="small">Ver +</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="danger" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -192,7 +196,9 @@ const Cambios = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" size="small">Ver +</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="primary" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -277,45 +283,49 @@ const Cambios = ({ updateMigas }) => {
                   </Fragment>
                 }
                 {tracker_cambio_estandar.estado===4 && 
-                  <Fragment>
+                  <div>
                     <p>¿Producto devuelto a tienda?</p>
-                    <Tooltip title="Aceptar">
-                      <Button 
-                        type="primary" 
-                        shape="circle"
-                        onClick={() => updateTracker(tracker_cambio_estandar)} 
-                      >
-                        <CheckOutlined />
-                      </Button>
-                    </Tooltip>
-                    <Tooltip title="Denegar">
-                      <Button 
-                        type="primary" 
-                        shape="circle"
-                      >
-                        <CloseOutlined />
-                      </Button>
-                    </Tooltip>
-                  </Fragment>
+                    <div style={{ display: "flex", justifyContent: "space-evenly"}}>
+                      <Tooltip title="Aceptar">
+                        <Button 
+                          type="primary" 
+                          shape="circle"
+                          onClick={() => updateTracker(tracker_cambio_estandar)} 
+                        >
+                          <CheckOutlined />
+                        </Button>
+                      </Tooltip>
+                      <Tooltip title="Denegar">
+                        <Button 
+                          type="primary" 
+                          shape="circle"
+                        >
+                          <CloseOutlined />
+                        </Button>
+                      </Tooltip>
+                    </div>
+                  </div>
                 }
                 {tracker_cambio_estandar.estado===5 && 
-                  <Fragment>
+                  <div>
                     <p>¿Cambio aceptado?</p>
-                    <Tooltip title="Aceptar">
-                      <Button  
-                        type="primary" 
-                        shape="circle"
-                        onClick={aceptarCambio}
-                      >
-                        <CheckOutlined />
-                      </Button>
-                    </Tooltip>
-                    <Popover content={motivo} title="Denegar" trigger="click">
-                      <Button type="primary" shape="circle">
-                        <CloseOutlined />
-                      </Button>
-                    </Popover>
-                  </Fragment>
+                    <div style={{ display: "flex", justifyContent: "space-evenly"}}>
+                      <Tooltip title="Aceptar">
+                        <Button  
+                          type="primary" 
+                          shape="circle"
+                          onClick={aceptarCambio}
+                        >
+                          <CheckOutlined />
+                        </Button>
+                      </Tooltip>
+                      <Popover content={motivo} title="Denegar" trigger="click">
+                        <Button type="primary" shape="circle">
+                          <CloseOutlined />
+                        </Button>
+                      </Popover>
+                    </div>
+                  </div>
                 }
                 {tracker_cambio_estandar.estado===6 && 
                   <Fragment>
@@ -392,7 +402,9 @@ const Cambios = ({ updateMigas }) => {
         </div>
         return (
           <Popover content={general} title="" trigger="click">
-            <Button type="danger" size="small">Ver +</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="danger" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -468,7 +480,9 @@ const Cambios = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" size="small">Ver +</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="primary" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -507,19 +521,21 @@ const Cambios = ({ updateMigas }) => {
 
         return (
           
-          <Fragment>
+          <div>
             <p>¿Se aceptará el pago del delivery?</p>
-            <Tooltip title="Aceptar">
-              <Button type="primary" shape="circle"  onClick={Aceptar} >
-                <CheckOutlined />
-              </Button>
-            </Tooltip>
-            <Tooltip title="Denegar">
-              <Button type="primary" shape="circle" onClick={Denegar}>
-                <CloseOutlined />
-              </Button>
-            </Tooltip>
-          </Fragment>
+            <div style={{ display: "flex", justifyContent: "space-evenly"}}>
+              <Tooltip title="Aceptar">
+                <Button type="primary" shape="circle"  onClick={Aceptar} >
+                  <CheckOutlined />
+                </Button>
+              </Tooltip>
+              <Tooltip title="Denegar">
+                <Button type="primary" shape="circle" onClick={Denegar}>
+                  <CloseOutlined />
+                </Button>
+              </Tooltip>
+            </div>
+          </div>
         );
       }
     }

@@ -69,7 +69,9 @@ const Devoluciones = ({ updateMigas }) => {
         </div>
         return (
           <Popover content={general} title="" trigger="click">
-            <Button type="danger" size="small">Ver +</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="danger" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -144,7 +146,9 @@ const Devoluciones = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" size="small">Ver Productos</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="primary" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -253,69 +257,75 @@ const Devoluciones = ({ updateMigas }) => {
                   <p>Producto Recogido</p>
               }
               {tracker_devolucion.estado===4 && 
-                <Fragment>
+                <div>
                   <p>¿Producto devuelto?</p>
-                  <Tooltip title="Aceptar">
-                    <Button 
-                      type="primary" 
-                      shape="circle"
-                      onClick={() => devolverProducto(true)}
-                    >
-                      <CheckOutlined />
-                    </Button>
-                  </Tooltip>
-                  <Tooltip title="Denegar">
-                    <Button 
-                      type="primary" 
-                      shape="circle"
-                      onClick={() => devolverProducto(false)}
-                    >
-                      <CloseOutlined />
-                    </Button>
-                  </Tooltip>
-                </Fragment>
+                  <div style={{ display: "flex", justifyContent: "space-evenly"}}>
+                    <Tooltip title="Aceptar">
+                      <Button 
+                        type="primary" 
+                        shape="circle"
+                        onClick={() => devolverProducto(true)}
+                      >
+                        <CheckOutlined />
+                      </Button>
+                    </Tooltip>
+                    <Tooltip title="Denegar">
+                      <Button 
+                        type="primary" 
+                        shape="circle"
+                        onClick={() => devolverProducto(false)}
+                      >
+                        <CloseOutlined />
+                      </Button>
+                    </Tooltip>
+                  </div>
+                </div>
               }
               {tracker_devolucion.estado===5 && 
-                <Fragment>
+                <div>
                   <p>¿Devolución aceptada?</p>
-                  <Tooltip title="Aceptar">
-                    <Button 
-                      type="primary" 
-                      shape="circle"
-                      onClick={aceptarDevolucion}
-                    >
-                      <CheckOutlined />
-                    </Button>
-                  </Tooltip>
-                  <Popover content={motivo} title="" trigger="click">
-                    <Button type="primary" shape="circle" >
-                      <CloseOutlined />
-                    </Button>
-                  </Popover>
-                </Fragment>
+                  <div style={{ display: "flex", justifyContent: "space-evenly"}}>
+                    <Tooltip title="Aceptar">
+                      <Button 
+                        type="primary" 
+                        shape="circle"
+                        onClick={aceptarDevolucion}
+                      >
+                        <CheckOutlined />
+                      </Button>
+                    </Tooltip>
+                    <Popover content={motivo} title="" trigger="click">
+                      <Button type="primary" shape="circle" >
+                        <CloseOutlined />
+                      </Button>
+                    </Popover>
+                  </div>
+                </div>
               }
               {tracker_devolucion.estado===6 && 
-                <Fragment>
+                <div>
                   <p>¿Dinero devuelto?</p>
-                  <Tooltip title="Aceptar">
-                    <Button 
-                      type="primary" 
-                      shape="circle" 
-                      onClick={() => devolverDinero({aceptado: true})}
-                    >
-                      <CheckOutlined />
-                    </Button>
-                  </Tooltip>
-                  <Tooltip title="Denegar">
-                    <Button 
-                      type="primary" 
-                      shape="circle"
-                      onClick={() => devolverDinero({aceptado: false})}
-                    >
-                      <CloseOutlined />
-                    </Button>
-                  </Tooltip>
-                </Fragment>
+                  <div style={{ display: "flex", justifyContent: "space-evenly"}}>
+                    <Tooltip title="Aceptar">
+                      <Button 
+                        type="primary" 
+                        shape="circle" 
+                        onClick={() => devolverDinero({aceptado: true})}
+                      >
+                        <CheckOutlined />
+                      </Button>
+                    </Tooltip>
+                    <Tooltip title="Denegar">
+                      <Button 
+                        type="primary" 
+                        shape="circle"
+                        onClick={() => devolverDinero({aceptado: false})}
+                      >
+                        <CloseOutlined />
+                      </Button>
+                    </Tooltip>
+                  </div>
+                </div>
               }
               {tracker_devolucion.estado===7 && 
                 <Fragment>
@@ -376,7 +386,9 @@ const Devoluciones = ({ updateMigas }) => {
         </div>
         return (
           <Popover content={general} title="" trigger="click">
-            <Button type="danger" size="small">Ver +</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="danger" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -451,7 +463,9 @@ const Devoluciones = ({ updateMigas }) => {
         </div>
         return(
           <Popover content={general} title="" trigger="click">
-            <Button type="primary" size="small">Ver +</Button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Button type="primary" size="small">Ver +</Button>
+            </div>
           </Popover>
         );
       }
@@ -489,15 +503,17 @@ const Devoluciones = ({ updateMigas }) => {
         }
 
         return (
-          <Fragment>
+          <div>
             <p>¿Se aceptará el pago del delivery?</p>
-            <Tooltip title="Aceptar">
-              <Button type="primary" shape="circle" onClick={Aceptar} ><CheckOutlined /></Button>
-            </Tooltip>
-            <Tooltip title="Denegar">
-              <Button type="primary" shape="circle" onClick={Denegar} ><CloseOutlined /></Button>
-            </Tooltip>
-          </Fragment>
+            <div style={{ display: "flex", justifyContent: "space-evenly"}}>
+              <Tooltip title="Aceptar">
+                <Button type="primary" shape="circle" onClick={Aceptar} ><CheckOutlined /></Button>
+              </Tooltip>
+              <Tooltip title="Denegar">
+                <Button type="primary" shape="circle" onClick={Denegar} ><CloseOutlined /></Button>
+              </Tooltip>
+            </div>
+          </div>
         );
       }
     }
